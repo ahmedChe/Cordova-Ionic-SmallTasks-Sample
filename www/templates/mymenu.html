@@ -1,0 +1,69 @@
+
+<ion-side-menus enable-menu-with-back-views="false" style="" data-componentid="side-menu21">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button></ion-nav-back-button>
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="Content"></ion-nav-view>
+  </ion-side-menu-content>
+  <ion-side-menu side="left" id="side-menu21">
+    <ion-header-bar class="bar-stable">
+      <div class="title">Menu</div>
+    </ion-header-bar>
+    <ion-content ng-controller="menuCtrl" padding="false" class="custom">
+      <ion-list>
+   <ion-item class="item" menu-close ui-sref="app.user">
+     Profile
+   </ion-item>
+   <ion-item class="item" menu-close ui-sref="app.addPost">
+     Add Posts
+   </ion-item>
+   <ion-item class="item" menu-close ui-sref="app.myPosts">
+     My Posts
+   </ion-item>
+   <ion-item class="item" menu-close ui-sref="app.jobsDetails.jobsDisplay">
+     Display Taks
+   </ion-item>
+   <ion-item menu-close ng-click="logout()">
+     Quit
+   </ion-item>
+ </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>
+<style>
+.custom {
+background-color: #444;
+font:black;/* This sets the background color*/
+}
+
+/*Set the background to transparent for ion-item*/
+.custom .item {
+background-color: transparent;
+border:none;   /*Removes all borders*/
+border-top: 1px solid;   /*Top Border for each menu item*/
+border-bottom:2px solid;   /*Bottom border for each menu item*/
+border-color: #666;   /*Sets colors for top and bottom border*/
+color: white;    /*Text color for each item*/
+}
+
+/*Changes the border for the last item*/
+.custom .item:last-child {
+border-bottom: 1px solid #666;
+}
+
+.custom .item-complex .item-content, .dark .item-radio .item-content {
+background-color: transparent;
+}
+
+/*Just makes the type white*/
+.custom h2,
+.custom h3,
+.custom p,
+.custom a {
+color: white;  /*Text color for each item, overrides the color property above*/
+}
+</style>

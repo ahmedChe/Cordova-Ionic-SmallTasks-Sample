@@ -1,0 +1,14 @@
+<ion-view title="Jobs Display" id="page3" style="">
+  <ion-content padding="true" class="has-header">
+    <ion-list id="myPosts-list2">
+       <b>Look for :</b><input type="text" ng-model="name" placeholder="search"/>
+        <ion-item ng-repeat="post in posts | filter:name ">
+          <div style="color:red;font-weight:bold;">{{post.title}}</div><br>
+          <b>Required employeer :</b> {{post.employeer}}<br>
+          <b>Job description :</b> {{post.description}} <br>
+          <div style="line-height: 200%;"><b>Post Owner :</b> {{post.phone}} </div><div ng-click="call(post.phone)" style="margin-left:190px;margin-top:-30px;"><img ng-src="../img/phone.svg"/></div>
+          <button ng-click="trace(post.latitude,post.longitude)" style="float:right;width:15%;"class="button button-positive">Trace Location</button>
+        </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

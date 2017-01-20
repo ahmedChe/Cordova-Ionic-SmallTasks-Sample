@@ -1,0 +1,41 @@
+<ion-view title="Add Post" id="page6" style="">
+  <ion-content padding="true" class="has-header">
+    <form name="post_form" class="form-container">
+      <label class="item item-input" id="addPost-input2">
+        <span class="input-label">Job Title</span>
+        <input placeholder="" type="text" ng-model="Post.title" required>
+      </label>
+      <label class="item item-select" id="addPost-select1">
+        <span class="input-label">Employer</span>
+        <select ng-model="Post.employeer" required style="width:100%;border:0;margin: 0;padding-right: 24px;">
+          <option value="carpenter">Carpenter</option>
+          <option value="gardner">Gardner</option>
+          <option value="electrician">Electrician</option>
+          <option value="painter">Painter</option>
+          <option value="mourning">Mourning</option>
+          <option value="mechanic">Mechanic</option>
+          <option value="plumber">Plumber</option>
+          <option value="nurse">Nurse</option>
+        </select>
+      </label>
+      <label class="item item-input" id="addPost-textarea1">
+        <span class="input-label">Job Description</span><textarea placeholder="Describe the request tasks" ng-model="Post.description" required></textarea></label>
+      <label class="item item-input" id="addPost-input3">
+        <span class="input-label">Phone</span>
+        <input placeholder="Phone Number" type="number" ng-model="Post.phone" required>
+      </label>
+      <div id="location">
+      <label class="item item-input" id="addPost-input4">
+        <span class="input-label">Job Location</span>
+        <input placeholder="Latitude" type="text" id="latitude" ng-model="Post.latitude" style="width:45%">
+        <input placeholder="Longitude" type="text" id="longitude" ng-model="Post.longitude" style="width:45%">
+      </label>
+      </div>
+      <button id="addPost-button5" ng-click="addPost(Post)" ng-disabled="post_form.$invalid" style="width:49%;float:left;margin-top:10px;margin-right:20px;"class="button button-positive">Post</button>
+      <input type="reset" id="addPost-button4" class="button button-positive" style="width:49%;margin-top:10px;" value="Reset"/>
+    </form>
+    <div ng-show="errors" style="color:red;text-align:center;">
+      <p class="message error" ng-repeat="error in errors"><b>{{error.msg}}</b></p>
+    </div>
+  </ion-content>
+</ion-view>
